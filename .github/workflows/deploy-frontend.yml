@@ -1,0 +1,23 @@
+name: Build and Push Frontend to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Loguearse en Docker Hub
+        run: echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
+
+      - name: Construir la imagen Docker del frontend
+        run: docker build -t lusalvi/frontend:latest ./frontend
+
+      - name: Subir la imagen a Docker Hub
+        run: docker push lusalvi/frontend:latest
