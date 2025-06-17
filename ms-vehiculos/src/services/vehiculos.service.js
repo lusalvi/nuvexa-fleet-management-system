@@ -1,4 +1,4 @@
-const supabase = require('../supabaseClient');
+const supabase = require('../../supabaseClient');
 const prefix = process.env.SUPABASE_PREFIX || '';
 
 async function obtenerVehiculos() {
