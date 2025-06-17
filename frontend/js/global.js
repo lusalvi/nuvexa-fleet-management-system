@@ -16,7 +16,7 @@ const BASE_PATH = getBasePath();
 // -------------------- AUTENTICACIÓN Y ACCESO --------------------
 function verificarAcceso() {
   const ruta = window.location.pathname;
-  if (ruta.includes('/frontend/index.html') || ruta.includes('index.html')) return;
+  if (ruta.includes('/frontend/templates/logueo.html') || ruta.includes('/templates/logueo.html')) return;
 
   const token = localStorage.getItem('token');
   const verificado = sessionStorage.getItem("verificacion_completa") === "true";
@@ -25,7 +25,7 @@ function verificarAcceso() {
     sessionStorage.clear();
     localStorage.clear();
     const esLocal = window.location.origin.includes('127.0.0.1') || window.location.origin.includes('localhost');
-    const rutaLogout = esLocal ? '/frontend/index.html' : 'index.html';
+    const rutaLogout = esLocal ? '/frontend/templates/logueo.html' : '/templates/logueo.html';
 
     window.location.replace(rutaLogout);
   }
@@ -36,7 +36,7 @@ function cerrarSesion() {
   localStorage.clear();
 
   const esLocal = window.location.origin.includes('127.0.0.1') || window.location.origin.includes('localhost');
-  const rutaLogout = esLocal ? '/frontend/index.html' : 'index.html';
+  const rutaLogout = esLocal ? '/frontend/templates/logueo.html' : '/templates/logueo.html';
 
   window.location.href = rutaLogout;
 }
