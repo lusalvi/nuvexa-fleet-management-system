@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Comando para iniciar el microservicio
-CMD ["npm", "start"]
+CMD ["node", "src/index.js"]
