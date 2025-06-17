@@ -110,8 +110,8 @@ function setupVerificacionModal() {
             }
 
             const rutaFinal = window.location.origin.includes('127.0.0.1') || window.location.origin.includes('localhost')
-                ? '/frontend/index.html'
-                : '/index.html';
+                ? '/frontend/templates/dashboard.html'
+                : '/dashboard.html';
 
             window.location.href = rutaFinal;
         } else {
