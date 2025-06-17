@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+  name: frontend
   namespace: dev
 spec:
   selector:
     app: frontend
-  type: NodePort
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30100  # Puerto accesible 
+  type: NodePort
