@@ -2,12 +2,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api-ingress
-  namespace: dev
+  namespace: test
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: nuvexa.local
+    - host: nuvexa-test.local
       http:
         paths:
           - path: /api/vehiculos
