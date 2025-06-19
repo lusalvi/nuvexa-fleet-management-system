@@ -25,4 +25,5 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: supabase-secret
-                  key: api-key
+                  key: SUPABASE_KEY
+                  
