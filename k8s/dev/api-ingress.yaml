@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: vehiculos
+                name: vehiculos-service
                 port:
                   number: 3000
           - path: /api/conductores

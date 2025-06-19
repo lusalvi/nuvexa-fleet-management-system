@@ -14,21 +14,21 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: vehiculos
+                name: vehiculos-service
                 port:
                   number: 3000
           - path: /api/conductores
             pathType: Prefix
             backend:
               service:
-                name: personal
+                name: personal-service
                 port:
                   number: 3000
           - path: /api/pasajeros
             pathType: Prefix
             backend:
               service:
-                name: personal
+                name: personal-service
                 port:
                   number: 3000
 
