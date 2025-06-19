@@ -1,5 +1,5 @@
 // script.js corregido
-const API_URL = 'https://sistema-de-rastreo-de-flotas.onrender.com/api';
+const API_URL = '/api';
 
 
 // Determinar la base URL dependiendo de dónde se carga el script
