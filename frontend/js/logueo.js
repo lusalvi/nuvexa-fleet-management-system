@@ -110,7 +110,7 @@ function setupVerificacionModal() {
             }
 
             const rutaFinal = window.location.origin.includes('127.0.0.1') || window.location.origin.includes('localhost')
-                ? '/frontend/index.html'
+                ? '/index.html'
                 : '/index.html';
 
             window.location.href = rutaFinal;
