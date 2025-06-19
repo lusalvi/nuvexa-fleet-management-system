@@ -2,32 +2,33 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: api-ingress
-  namespace: test
+  namespace: dev
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: nuvexa.local
       http:
         paths:
-          - path: /api/vehiculos(/|$)(.*)
+          - path: /api/vehiculos
             pathType: Prefix
             backend:
               service:
                 name: vehiculos
                 port:
                   number: 3000
-          - path: /api/conductores(/|$)(.*)
+          - path: /api/conductores
             pathType: Prefix
             backend:
               service:
                 name: personal
                 port:
                   number: 3000
-          - path: /api/pasajeros(/|$)(.*)
+          - path: /api/pasajeros
             pathType: Prefix
             backend:
               service:
                 name: personal
                 port:
                   number: 3000
+
