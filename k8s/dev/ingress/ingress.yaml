@@ -20,7 +20,7 @@ spec:
                   number: 80
 
           # Backend: microservicio personal
-          - path: /api/personal(/|$)(.*)
+          - path: /api/personal
             pathType: Prefix
             backend:
               service:
@@ -29,7 +29,7 @@ spec:
                   number: 3000
 
           # Backend: microservicio vehiculos
-          - path: /api/vehiculos(/|$)(.*)
+          - path: /api/vehiculos
             pathType: Prefix
             backend:
               service:
