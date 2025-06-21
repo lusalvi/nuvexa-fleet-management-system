@@ -1,4 +1,5 @@
 {{- $name := .Values.component }}
+{{- $config := index .Values $name }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,16 +17,16 @@ spec:
     spec:
       containers:
         - name: {{ $name }}
-          image: {{ .Values.image }}
+          image: {{ $config.image }}
           ports:
-            - containerPort: {{ .Values.port }}
+            - containerPort: {{ $config.port }}
           {{- if eq $name "vehiculos" }}
           env:
             - name: SUPABASE_URL
-              value: {{ .Values.supabase.url }}
+              value: {{ $config.supabase.url }}
             - name: SUPABASE_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.supabase.secretName }}
-                  key: {{ .Values.supabase.secretKey }}
+                  name: {{ $config.supabase.secretName }}
+                  key: {{ $config.supabase.secretKey }}
           {{- end }}

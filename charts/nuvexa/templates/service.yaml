@@ -1,4 +1,5 @@
 {{- $name := .Values.component }}
+{{- $config := index .Values $name }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -7,11 +8,13 @@ metadata:
 spec:
   selector:
     app: {{ $name }}
-  ports:
-    - protocol: TCP
-      port: {{ .Values.port }}
-      targetPort: {{ .Values.port }}
   {{- if eq $name "frontend" }}
   type: NodePort
-  nodePort: {{ .Values.nodePort }}
   {{- end }}
+  ports:
+    - protocol: TCP
+      port: {{ $config.port }}
+      targetPort: {{ $config.port }}
+      {{- if eq $name "frontend" }}
+      nodePort: {{ $config.nodePort }}
+      {{- end }}
