@@ -1,0 +1,4 @@
+namespace: test
+ingress:
+  host: nuvexa-test.local
+  rewrite: /$2

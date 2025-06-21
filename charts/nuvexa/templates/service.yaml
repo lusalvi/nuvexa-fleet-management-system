@@ -1,15 +1,17 @@
+{{- $name := .Values.component }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "nuvexa.fullname" . }}
-  labels:
-    {{- include "nuvexa.labels" . | nindent 4 }}
+  name: {{ .Chart.Name }}-{{ $name }}-service
+  namespace: {{ .Values.namespace }}
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
   selector:
-    {{- include "nuvexa.selectorLabels" . | nindent 4 }}
+    app: {{ $name }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.port }}
+      targetPort: {{ .Values.port }}
+  {{- if eq $name "frontend" }}
+  type: NodePort
+  nodePort: {{ .Values.nodePort }}
+  {{- end }}
