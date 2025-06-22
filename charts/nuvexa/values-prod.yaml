@@ -1,23 +1,23 @@
-namespace: test
+namespace: prod
 
 frontend:
-  image: lusalvi/frontend:test
+  image: lusalvi/frontend:prod
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
-    tablePrefix: "test_"
+    tablePrefix: ""
 
 personal:
-  image: lusalvi/personal:test
+  image: lusalvi/personal:prod
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
-    tablePrefix: "test_"
+    tablePrefix: ""
 
 vehiculos:
-  image: lusalvi/vehiculos:test
+  image: lusalvi/vehiculos:prod
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
-    tablePrefix: "test_"
+    tablePrefix: ""
 
 ingress:
-  host: nuvexa-test.local
+  host: nuvexa.com
   rewrite: /$2

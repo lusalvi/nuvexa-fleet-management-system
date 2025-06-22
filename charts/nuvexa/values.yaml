@@ -1,5 +1,4 @@
 component: frontend
-namespace: default
 
 frontend:
   image: lusalvi/frontend:latest
@@ -7,6 +6,7 @@ frontend:
   nodePort: 30100
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
+    tablePrefix: ""
     secretName: supabase-secret
     secretKey: SUPABASE_KEY
 
@@ -15,6 +15,7 @@ personal:
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
+    tablePrefix: ""
     secretName: supabase-secret
     secretKey: SUPABASE_KEY
 
@@ -23,11 +24,12 @@ vehiculos:
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
+    tablePrefix: ""
     secretName: supabase-secret
     secretKey: SUPABASE_KEY
 
 ingress:
-  host: nuvexa.local
+  host: ""
   rewrite: /
   paths:
     - path: /
