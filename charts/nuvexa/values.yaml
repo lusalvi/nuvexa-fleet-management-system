@@ -1,9 +1,9 @@
 component: frontend
+namespace: default
 
 frontend:
   image: lusalvi/frontend:latest
   port: 80
-  nodePort: 30110
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: ""
