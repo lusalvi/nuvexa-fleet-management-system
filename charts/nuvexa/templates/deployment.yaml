@@ -20,7 +20,7 @@ spec:
           image: {{ $config.image }}
           ports:
             - containerPort: {{ $config.port }}
-          {{- if eq $name "vehiculos" }}
+          {{- if or (eq $name "vehiculos") (eq $name "personal") }}
           env:
             - name: SUPABASE_URL
               value: {{ $config.supabase.url }}
@@ -29,4 +29,8 @@ spec:
                 secretKeyRef:
                   name: {{ $config.supabase.secretName }}
                   key: {{ $config.supabase.secretKey }}
+            {{- if $config.supabase.tablePrefix }}
+            - name: TABLE_PREFIX
+              value: {{ $config.supabase.tablePrefix }}
+            {{- end }}
           {{- end }}
