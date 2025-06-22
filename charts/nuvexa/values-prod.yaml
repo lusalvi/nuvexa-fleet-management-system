@@ -1,19 +1,23 @@
+component: frontend
 namespace: prod
 
 frontend:
   image: lusalvi/frontend:prod
+  port: 80
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: ""
 
 personal:
   image: lusalvi/personal:prod
+  port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: ""
 
 vehiculos:
   image: lusalvi/vehiculos:prod
+  port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: ""

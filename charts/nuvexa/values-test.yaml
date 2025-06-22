@@ -4,7 +4,6 @@ namespace: test
 frontend:
   image: lusalvi/frontend:test
   port: 80
-  nodePort: 30110
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: "test_"

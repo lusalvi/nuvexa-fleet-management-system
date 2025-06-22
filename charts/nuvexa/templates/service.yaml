@@ -6,15 +6,10 @@ metadata:
   name: {{ .Chart.Name }}-{{ $name }}-service
   namespace: {{ .Values.namespace }}
 spec:
+  type: ClusterIP
   selector:
     app: {{ $name }}
-  {{- if eq $name "frontend" }}
-  type: NodePort
-  {{- end }}
   ports:
     - protocol: TCP
       port: {{ $config.port }}
       targetPort: {{ $config.port }}
-      {{- if eq $name "frontend" }}
-      nodePort: {{ $config.nodePort }}
-      {{- end }}
