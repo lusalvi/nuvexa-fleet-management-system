@@ -1,3 +1,4 @@
+component: frontend
 namespace: test
 
 frontend:
