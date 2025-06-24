@@ -3,6 +3,7 @@ namespace: dev
 frontend:
   image: lusalvi/frontend
   tag: dev
+  imagePullPolicy: Always
   port: 80
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
@@ -11,6 +12,7 @@ frontend:
 personal:
   image: lusalvi/personal
   tag: dev
+  imagePullPolicy: Always
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
@@ -19,6 +21,7 @@ personal:
 vehiculos:
   image: lusalvi/vehiculos
   tag: dev
+  imagePullPolicy: Always
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"

@@ -18,6 +18,7 @@ spec:
       containers:
         - name: {{ $name }}
           image: {{ printf "%s:%s" $config.image $config.tag }}
+          imagePullPolicy: {{ $config.imagePullPolicy | default "IfNotPresent" }}
           ports:
             - containerPort: {{ $config.port }}
           {{- if or (eq $name "vehiculos") (eq $name "personal") }}
