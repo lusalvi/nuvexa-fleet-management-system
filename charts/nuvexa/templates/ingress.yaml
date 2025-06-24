@@ -5,7 +5,9 @@ metadata:
   name: nuvexa-ingress
   namespace: {{ .Values.namespace }}
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: {{ .Values.ingress.rewrite }}
+    {{- if .Values.ingress.rewrite }}
+    nginx.ingress.kubernetes.io/rewrite-target: "{{ .Values.ingress.rewrite }}"
+    {{- end }}
 spec:
   rules:
     - host: {{ .Values.ingress.host }}
