@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: {{ $name }}
-          image: {{ $config.image }}
+          image: {{ printf "%s:%s" $config.image $config.tag }}
           ports:
             - containerPort: {{ $config.port }}
           {{- if or (eq $name "vehiculos") (eq $name "personal") }}

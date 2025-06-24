@@ -3,6 +3,14 @@ kind: Application
 metadata:
   name: frontend-dev
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: |
+      lusalvi/frontend:tag=values-dev.yaml:frontend.tag,
+      lusalvi/personal:tag=values-dev.yaml:personal.tag,
+      lusalvi/vehiculos:tag=values-dev.yaml:vehiculos.tag
+    argocd-image-updater.argoproj.io/update-strategy: semver
+    argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
   source:

@@ -2,21 +2,24 @@ component: frontend
 namespace: test
 
 frontend:
-  image: lusalvi/frontend:test
+  image: lusalvi/frontend
+  tag: test
   port: 80
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: "test_"
 
 personal:
-  image: lusalvi/personal:test
+  image: lusalvi/personal
+  tag: test
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: "test_"
 
 vehiculos:
-  image: lusalvi/vehiculos:test
+  image: lusalvi/vehiculos
+  tag: test
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
@@ -25,3 +28,4 @@ vehiculos:
 ingress:
   host: nuvexa-test.local
   rewrite: /$2
+

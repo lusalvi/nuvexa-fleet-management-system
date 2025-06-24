@@ -2,7 +2,8 @@ component: frontend
 namespace: default
 
 frontend:
-  image: lusalvi/frontend:latest
+  image: lusalvi/frontend
+  tag: latest
   port: 80
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
@@ -11,7 +12,8 @@ frontend:
     secretKey: SUPABASE_KEY
 
 personal:
-  image: lusalvi/personal:latest
+  image: lusalvi/personal
+  tag: latest
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
@@ -20,7 +22,8 @@ personal:
     secretKey: SUPABASE_KEY
 
 vehiculos:
-  image: lusalvi/vehiculos:latest
+  image: lusalvi/vehiculos
+  tag: latest
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
@@ -41,3 +44,4 @@ ingress:
     - path: /api/vehiculos
       service: vehiculos
       port: 3000
+

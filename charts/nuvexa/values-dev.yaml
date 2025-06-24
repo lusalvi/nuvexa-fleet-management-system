@@ -1,21 +1,24 @@
 component: frontend
 namespace: dev
 frontend:
-  image: lusalvi/frontend:dev
+  image: lusalvi/frontend
+  tag: dev
   port: 80
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: "dev_"
 
 personal:
-  image: lusalvi/personal:dev
+  image: lusalvi/personal
+  tag: dev
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
     tablePrefix: "dev_"
 
 vehiculos:
-  image: lusalvi/vehiculos:dev
+  image: lusalvi/vehiculos
+  tag: dev
   port: 3000
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
