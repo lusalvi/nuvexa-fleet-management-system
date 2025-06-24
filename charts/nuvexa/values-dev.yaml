@@ -2,7 +2,7 @@ component: frontend
 namespace: dev
 
 frontend:
-  image: lusalvi/frontend:dev
+  image: lusalvi/frontend:dev-v1.0.1
   port: 80
   supabase:
     url: "https://clrawfedwpvywhdcclk.supabase.co"
