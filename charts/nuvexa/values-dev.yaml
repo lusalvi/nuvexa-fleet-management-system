@@ -1,6 +1,5 @@
 component: frontend
 namespace: dev
-
 frontend:
   image: lusalvi/frontend:dev
   port: 80
@@ -24,4 +23,4 @@ vehiculos:
 
 ingress:
   host: nuvexa-dev.local
-  rewrite: /$2
+  # rewrite: /$2
