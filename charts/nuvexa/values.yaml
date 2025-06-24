@@ -30,7 +30,7 @@ vehiculos:
 
 ingress:
   host: ""
-  rewrite: /
+  # rewrite: /
   paths:
     - path: /
       service: frontend

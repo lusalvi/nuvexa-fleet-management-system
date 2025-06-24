@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: nuvexa-ingress
   namespace: {{ .Values.namespace }}
-  annotations:
+  annotations: 
     {{- if .Values.ingress.rewrite }}
     nginx.ingress.kubernetes.io/rewrite-target: "{{ .Values.ingress.rewrite }}"
     {{- end }}
