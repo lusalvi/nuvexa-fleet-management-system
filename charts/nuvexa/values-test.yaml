@@ -3,7 +3,7 @@ namespace: test
 
 frontend:
   image: lusalvi/frontend
-  tag: test
+  tag: test-v1.0.1
   imagePullPolicy: Always
   port: 80
   supabase:
@@ -30,5 +30,5 @@ vehiculos:
 
 ingress:
   host: nuvexa-test.local
-  rewrite: /$2
+  # rewrite: /$2
 
