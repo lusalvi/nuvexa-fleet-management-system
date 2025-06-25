@@ -11,7 +11,7 @@ frontend:
 
 personal:
   image: lusalvi/personal
-  tag: dev-v1.0.1
+  tag: dev-v1.0.3
   imagePullPolicy: Always
   port: 3000
   supabase:
