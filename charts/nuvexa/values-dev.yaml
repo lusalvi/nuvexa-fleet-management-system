@@ -2,7 +2,7 @@ component: frontend
 namespace: dev
 frontend:
   image: lusalvi/frontend
-  tag: dev
+  tag: dev-v1.0.7
   imagePullPolicy: Always
   port: 80
   supabase:
